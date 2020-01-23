@@ -1,0 +1,222 @@
+<html>
+<head>
+</head>
+<style>
+.menu{
+
+	width: 100%;
+	height: 100px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.leftmenu{
+	width: 50%;
+	line-height: 100px;
+	float: left;
+
+	/*background-color: yellow;*/
+}
+.leftmenu h4{
+	/*padding-left: 70px;*/
+	font-weight: bold;
+	color: white;
+	font-size: 22px;
+	font-family: 'Montserrat', sans-serif;
+  margin-top: 10px;
+  margin-right: 300px;
+}
+
+
+.rightmenu{
+	width:50%;
+	height: 100px;
+	float: right;
+	/*background-color: red; */
+}
+
+.rightmenu ul{
+	margin-left: 250px;
+}
+
+.rightmenu ul li {
+	font-family: 'Montserrat', sans-serif;
+	display: inline-block;
+	list-style: none;
+	font-size: 15px;
+	color:white;
+	font-weight: bold;
+	line-height: 100px;
+	margin-left: 40px;
+	text-transform: uppercase;
+
+}
+
+#fisrtlist{
+	color: orange;
+}
+
+.rightmenu ul li:hover{
+	color: orange;
+}
+input[type=text], select, textarea {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+<script type="text/javascript">
+  function formvalidate()
+  {
+    var firstname= document.getElementById('fname');
+    var Lastname = document.getElementById('lname');
+    var number= document.getElementById('num');
+    var state = document.getElementById('country');
+    var sub = document.getElementById('subject');
+    if(isAlphabet(firstname, "Please enter only letters for your name")){
+    if(isAlphabet(Lastname, "Please enter only letters for your name")){
+      if(isNumeric(number, "Please enter a valid Phone number")){
+        if(madeSelection(state, "Please Choose a Country")){
+          if(lengthRestriction(sub, 20, 100)){
+              return true;
+            }
+          }
+        }
+      }
+  }
+  
+  
+  return false;
+  
+}
+
+
+function isNumeric(elem, helperMsg){
+  var numericExpression = /^\d{10}$/;
+  if(elem.value.match(numericExpression)){
+    return true;
+  }else{
+    alert(helperMsg);
+    elem.focus();
+    return false;
+  }
+}
+
+function isAlphabet(elem, helperMsg){
+  var alphaExp = /^[a-zA-Z]+$/;
+  if(elem.value.match(alphaExp)){
+    return true;
+  }else{
+    alert(helperMsg);
+    elem.focus();
+    return false;
+  }
+}
+
+function lengthRestriction(elem, min, max){
+  var uInput = elem.value;
+  if(uInput.length >= min && uInput.length <= max){
+    return true;
+  }else{
+    alert("Please enter minimum " +min+ " characters");
+    elem.focus();
+    return false;
+  }
+}
+
+function madeSelection(elem, helperMsg){
+  if(elem.value == "Please Choose"){
+    alert(helperMsg);
+    elem.focus();
+    return false;
+  }else{
+    return true;
+  }
+}
+
+</script>
+</head>
+<body bgcolor="grey">
+	<div class="row">
+			<div class="menu">
+			
+			<div class="leftmenu">
+				<h4 align="center"> INDUSTRIAL VISIT MANAGMENT</h4>
+			</div>
+
+			<div class="rightmenu">
+				<ul>
+					<a href="pro1.html"><li > HOME </li></a>
+					<li id="fisrtlist">  CONTACT US </li>
+					<a href="project.html"><li>LOGIN</li></a>
+				</ul>
+			</div>
+
+		</div>
+        <section id="googleMap">
+            
+
+            <iframe height="500" width="100%" frameborder="1" scrolling="yes" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1718.5938519152617!2d76.65897230753671!3d30.51573102052417!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x81b346dee91799ca!2sChitkara+University!5e0!3m2!1sen!2sin!4v1538552125889" width="100%" height="378" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+        <h3>Contact Form</h3>
+
+<div class="container">
+  <form onsubmit="return formvalidate()" action="pro1.html">
+    <label for="fname">First Name</label><br>
+    <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+
+    <label for="lname">Last Name</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+    <label for="lname">Phone Number</label><br>
+    <input type="text" id="num" name="number" placeholder="Your Phone Number.."><br>
+
+    <label for="country">Country</label><br>
+    <select id="country" name="country">
+      <option selected="selected">Please Choose</option>
+    	<option >INDIA</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select><br>
+
+    <label for="subject">Subject</label><br>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
+
+    <button type='submit'>SUBMIT</button>
+
+<script>
+function myFunction() {
+  alert("Submit Successfully");
+}
+</script>
+  </form>
+</div>
+
+
+    </div>
+</body>
+</html>

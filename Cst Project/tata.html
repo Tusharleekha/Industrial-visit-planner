@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TATA</title>
+	<style type="text/css">
+		*{margin: 20; padding: 20;}
+        body{background: grey;background-image: url("tt.jpg");background-size: 100% 720px; font-family: sans-serif;}
+
+        
+        h1{text-align: left; color:blue; font-weight: normal; margin-bottom: 20px;font-size: 80px;font-family: sans-serif;font-style: italic;}
+        
+        h2{text-align: left;color: red;font-weight: normal;margin-left: 10px;font-family: sans-serif;}
+        p{text-align: left;color: white;font-weight: normal;margin-left: 10px;font-family: sans-serif;}
+        h3{text-align: left;color: red;font-weight: normal;margin-left: 10px;font-family: sans-serif;}
+        h4{text-align: justify; margin-left: 200px;color: yellow;}
+        pre{ margin-left: 200px; font-size: 20px}
+        .leftmenu{
+	float: left;
+	/*background-color: yellow;*/
+}
+.rightmenu{
+	width:60%;
+	height: 200px;
+	float: right;
+	/*background-color: red; */
+}
+        button{
+               margin-top: 0.001px;
+            height: 45px;
+            width: 180px;
+            font-size: 18px;
+            background-color: #191919;
+            color :white;
+            padding-left: 10px;
+            border : 2px solid #3498db;
+            border-radius: 20px;
+        }
+img{
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 5px; 
+  width: 200px;
+  height: 150px; 
+}
+.form-wrap{ 
+            width: 500px;
+    height: 500px;
+    text-align: center;
+    margin: 50 auto;
+  
+    margin-top: 210px;}
+    input[type="button"]:hover{ background: #a4b15c; }
+        
+        ::placeholder{color: #fff;}
+     p
+     {
+     	text-align: center;
+     }  
+    
+	</style>
+	
+</head>
+
+<body>
+
+            
+                <h1>TATA Group.</h1>
+                <h2>Description:</h2>
+                <div>
+                <div class="leftmenu">
+                	<p align="left" align="justify">
+                		                    Tata Group is an Indian multinational conglomerate holding company<br>
+                                            headquartered in Mumbai, Maharashtra, India. Founded in 1868 by<br> 
+                                            Jamsetji Tata, the company gained international recognition after<br>
+                                            purchasing several global companies. One of India's largest<br> 
+                                            conglomerates, Tata Group is owned by Tata Sons.<br>
+
+                                            Each Tata company operates independently under the guidance and<br> 
+                                            supervision of its own board of directors and shareholders.<br> 
+                                            Significant Tata companies and subsidiaries include Tata Steel,<br> 
+                                            Tata Motors, Jaguar Land Rover, Tata Consultancy Services,<br> 
+                                            Tata Advanced Systems Limited , Tata Power, Tata Chemicals,<br>
+                                            Tata Global Beverages, Tata Coffee, Tata Teleservices, Titan,<br> 
+                                            Voltas, TATA cliq, Tata Communications, and The Indian Hotels<br>
+                                             Company Limited (Taj Hotels).<br>
+                                            
+                      </p>             
+                </div>
+                <div class="rightmenu">
+                	<img src="tcs.png" width="200px" height="200px">
+                </div>
+                </div><br><br><br><br>
+                
+                
+                   <div class="form-wrap">
+
+              
+                	<div>
+                	<h3>PACKAGE DETAIL :</h3>
+                    <pre><h4>Place:                                     Mumbai</h4></pre>
+                    <pre><h4>Accomodation Amount :                       5000   </h4></pre>
+                    <pre><h4>Airline Amount:                             4000   </h4></pre>          
+                    <pre><h4>Train Amount :                              1000    </h4></pre>
+                    <pre><h4>Bus Amount :                                2500    </h4></pre>
+                    <pre><h4>Mode of Transport :                 <input type="radio" name="mode" id="Airplane"> Airplane <input type="radio" name="mode" id="Train"> Train  <input type="radio" name="mode" id="Bus"> Bus </pre></h4>                                                  
+                    <pre><h4>Number of person :                        <input id="person"></h4>
+                                          <button onclick="calculate()">Calculate</button>
+
+                                          <p  style="font-size: 20px; text-align: center;">Total expenditure : </p>
+                              <script>
+        function calculate()
+            {
+                
+                      var x = document.getElementById("Airplane").checked;
+                  var y= document.getElementById("Train").checked;
+                  var a=document.getElementById("Bus").checked;
+                  var z;
+                  if(x==true)
+                    {
+                      z=4000;
+                    }
+                  else if(y==true)
+                    {
+                      z=1000;
+                    }
+                   else
+                   {
+                   	 z=2500;
+                   }
+                   person = document.getElementById("person").value;
+                 document.getElementById("result").innerHTML = (z*person)+(person*5000);
+                
+                    // /*result.innerHTML = "No. of person :" + (z);/
+            }
+</script>           
+ 
+                     </div>
+             
+
+                </div>
+                <p id="result" style="font-size: 20px; text-align: center;"></p> <br> 
+                <pre>                                          <a href="q.html"><button align="center">PAY</button></a></pre>   
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+
+<html>
+
+    
+    <head>
+        <title>Sign Up</title>
+    
+    
+    <style>
+    
+        *{margin: 0; padding: 0;}
+        body{background: grey;background-image: url("tt.jpg");background-size: 100% 720px; font-family: sans-serif;}
+        
+        .form-wrap{ 
+            width: 500px;
+    height: 500px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(44, 62, 80,0.7);
+    margin-top: 110px;}
+        h1{text-align: center; color:white; font-weight: normal; margin-bottom: 20px;}
+        
+        input{width: 100%; background: none; border: 1px solid #fff; border-radius: 3px; padding: 6px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: #fff;}
+        input[type="text"],input[type="email"],input[type="password"]
+        {
+            margin-top: 0.001px;
+            height: 45px;
+            width: 250px;
+            font-size: 18px;
+            background-color: #191919;
+            color :white;
+            padding-left: 10px;
+            border : 2px solid #3498db;
+            border-radius: 20px;
+        }
+        input[type="submit"]
+        {
+               margin-top: 0.001px;
+            height: 45px;
+            width: 180px;
+            font-size: 18px;
+            background-color: #191919;
+            color :white;
+            padding-left: 10px;
+            border : 2px solid #3498db;
+            border-radius: 20px;
+        }
+         input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus
+         {
+            width :300px;
+            border-color: #2ecc71;
+         }
+         input[type="submit"]:focus
+         {
+                width :240px;
+            border-color: #2ecc71; 
+         }
+      
+        input[type="submit"]:hover{ background: #a4b15c; }
+        
+        ::placeholder{color: #fff;}
+
+    
+    </style>
+    <script type="text/javascript">
+        function formvalidate()
+        {
+            var firstname= document.getElementById('firstname');
+            var username = document.getElementById('username');
+            var email= document.getElementById('email' );
+            var password=document.getElementById('password');
+            var password1=document.getElementById('password1');
+
+            if(isAlphabet(firstname, "Please enter only letters for your name")){
+                 if(isAlphanumeric(username, "Numbers and Letters Only for username")){
+                            if(emailValidator(email, "Please enter a valid email address")){
+                               if(check()){ 
+                            return true;
+                        }
+                  }
+              }
+         }
+    
+    
+    return false;
+    
+}
+
+function notEmpty(elem, helperMsg){
+    if(elem.value.length == 0){
+        alert(helperMsg);
+        elem.focus(); // set the focus to this input
+        return false;
+    }
+    return true;
+}
+
+function isAlphabet(elem, helperMsg){
+    var alphaExp = /^[a-zA-Z]+$/;
+    if(elem.value.match(alphaExp)){
+        return true;
+    }else{
+        alert(helperMsg);
+        elem.focus();
+        return false;
+    }
+}
+
+function isAlphanumeric(elem, helperMsg){
+    var alphaExp = /^[0-9a-zA-Z]+$/;
+    if(elem.value.match(alphaExp)){
+        return true;
+    }else{
+        alert(helperMsg);
+        elem.focus();
+        return false;
+    }
+}
+
+
+function emailValidator(elem, helperMsg){
+    var emailExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(elem.value.match(emailExp)){
+        return true;
+    }else{
+        alert(helperMsg);
+        elem.focus();
+        return false;
+    }
+}
+ function check() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    return true;
+  } else {
+    alert("not matching");
+    return false;
+  }
+}
+    </script>
+</head>
+    <body>
+    
+        <div class="form-wrap">
+        
+            <form onsubmit="return formvalidate()" action="project.html">
+            
+                <h1>REGISTRATION FORM</h1>
+                <input type="text" placeholder="Name" id="firstname">
+                <input type="text" placeholder="Username" id="username">
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="password">
+                <input type="password" placeholder="Confirm Password" id="confirm_password">
+                <br>
+                <input type="submit" value="Sign up">
+            </form>
+         
+        </div>
+    
+    
+    
+    </body>
+
+
+
+</html>

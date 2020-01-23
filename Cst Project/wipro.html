@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wipro</title>
+	<style type="text/css">
+		*{margin: 20; padding: 20;}
+        body{background: grey;background-image: url("tt.jpg");background-size: 100% 720px; font-family: sans-serif;}
+
+        
+        h1{text-align: left; color:blue; font-weight: normal; margin-bottom: 20px;font-size: 80px;font-family: sans-serif;font-style: italic;}
+        
+        h2{text-align: left;color: red;font-weight: normal;margin-left: 10px;font-family: sans-serif;}
+        p{text-align: left;color: white;font-weight: normal;margin-left: 10px;font-family: sans-serif;}
+        h3{text-align: left;color: red;font-weight: normal;margin-left: 10px;font-family: sans-serif;}
+        h4{text-align: justify; margin-left: 200px;color: yellow;}
+        pre{ margin-left: 200px; font-size: 20px}
+        .leftmenu{
+	float: left;
+	/*background-color: yellow;*/
+}
+.rightmenu{
+	width:60%;
+	height: 200px;
+	float: right;
+	/*background-color: red; */
+}
+        button{
+               margin-top: 0.001px;
+            height: 45px;
+            width: 180px;
+            font-size: 18px;
+            background-color: #191919;
+            color :white;
+            padding-left: 10px;
+            border : 2px solid #3498db;
+            border-radius: 20px;
+        }
+img{
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 5px; 
+  width: 200px;
+  height: 150px; 
+}
+.form-wrap{ 
+            width: 500px;
+    height: 500px;
+    text-align: center;
+    margin: 50 auto;
+  
+    margin-top: 210px;}
+    input[type="button"]:hover{ background: #a4b15c; }
+        
+        ::placeholder{color: #fff;}
+        
+    
+	</style>
+	
+</head>
+
+<body>
+
+            
+                <h1>WIPRO</h1>
+                <h2>Description:</h2>
+                <div>
+                <div class="leftmenu">
+                	<p align="left" align="justify">
+                		                   Wipro Limited is an Indian multinational corporation that provides<br>
+                		                   information technology, consulting and business process services.<br> 
+                		                   It is headquartered in Bengaluru, Karnataka, India.<br>
+
+                                           In 2013, Wipro demerged its non-IT businesses into separate companies.<br>
+                                           In August 2018, Wipro paid US $75m to National Grid US as a settlement<br> 
+                                           for a botched SAP implementation that a 2014 audit estimated could<br> 
+                                           cost the company US $1 billion. Wipro had been hired as systems<br> 
+                                           integrator in 2010, but errors in the rollout, intended to replace<br>
+                                           an Oracle system, caused serious losses and reputational damage.<br>
+
+
+                                            
+                      </p>             
+                </div>
+                <div class="rightmenu">
+                	<img src="wipro.jpg" width="200px" height="200px">
+                </div>
+                </div><br><br><br><br>
+                
+                
+                   <div class="form-wrap">
+
+              
+                	<div>
+                	<h3>PACKAGE DETAIL :</h3>
+                    <pre><h4>Place:                                     Bengaluru</h4></pre>
+                    <pre><h4>Accomodation Amount :                       4000   </h4></pre>
+                    <pre><h4>Airline Amount:                             3500   </h4></pre>          
+                    <pre><h4>Train Amount :                              1200    </h4></pre>
+                    <pre><h4>Bus Amount :                                2500    </h4></pre>
+                    <pre><h4>Mode of Transport :                 <input type="radio" name="mode" id="Airplane"> Airplane <input type="radio" name="mode" id="Train"> Train  <input type="radio" name="mode" id="Bus"> Bus </pre></h4>                                                  
+                    <pre><h4>Number of person :                        <input id="person"></h4>
+                                          <button onclick="calculate()">Calculate</button>
+                                           <p  style="font-size: 20px; text-align: center;">Total expenditure : </p>
+                              <script>
+        function calculate()
+            {
+                       var x = document.getElementById("Airplane").checked;
+                  var y= document.getElementById("Train").checked;
+                  var a=document.getElementById("Bus").checked;
+                  var z;
+                  if(x==true)
+                    {
+                      z=3500;
+                    }
+                  else if(y==true)
+                    {
+                      z=1200;
+                    }
+                   else
+                   {
+                     z=2500;
+                   }
+                   person = document.getElementById("person").value;
+                 document.getElementById("result").innerHTML = (z*person)+(person*4000);
+            }
+</script>           
+ 
+                     </div>
+             
+
+                </div>
+                <p id="result" style="font-size: 20px; text-align: center;"></p> <br> 
+                <pre>                                         <a href="q.html"> <button align="center">PAY</button></a></pre>   
+
+</body>
+</html>

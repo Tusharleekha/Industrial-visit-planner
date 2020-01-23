@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Login </title>
+	<link rel="stylesheet" a href="style.css">
+	<script type="text/javascript">
+		function formvalidation()
+		{
+			var username=document.getElementById('username');
+			var password=document.getElementById('password2');
+            
+			
+		    if(isAlphanumeric(username, "Numbers or Letters Only for Username")){
+						if(password1(password, "Please enter a valid password")){
+							return true;
+						}
+					}
+	
+	       return false;
+	   }
+	   function isAlphanumeric(elem, helperMsg){
+	var alphaExp = /^[a-zA-Z0-9]+$/;
+	if(elem.value.match(alphaExp)){
+		return true;
+	}else{
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+	function password1(elem,helperMsg)
+	{
+		var alphaExp=/^[a-zA-z0-9]+$/;
+		if(elem.value.match(alphaExp)){
+		 return true;
+	}   else{
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+	}
+}
+
+
+
+	</script>
+</head>
+<body>
+			<div class="menu">
+			
+			<div class="leftmenu">
+				<h4> INDUSTRIAL VISIT MANAGMENT</h4>
+			</div>
+
+			<div class="rightmenu">
+				<ul>
+					<a href="pro1.html"><li > HOME </li></a>
+					<a href="project2.html"><li>  CONTACT US </li></a>
+					<li id="fisrtlist">LOGIN</li>
+				</ul>
+			</div>
+
+		</div>
+	<div class="container">
+	<img src="login.jpg"/>s
+		<form onsubmit="return formvalidation()" action="user1.html">
+			<div class="form-input">
+				<input type="text" name="text" placeholder="Enter the User Name" id="username" required/>	
+			</div>
+			<div class="form-input">
+				<input type="password" name="password" placeholder="password" id="password2" required/>
+			</div>
+
+           		<button type="submit" class="btn-login">LOGIN</button><br>
+           	</form>
+	</div>
+	<div class="container2">
+	<a href="project1.html" target="_blank"> <button class="newbtn">Not an existing user</button></a>
+    </div>
+</body>
+</html>
